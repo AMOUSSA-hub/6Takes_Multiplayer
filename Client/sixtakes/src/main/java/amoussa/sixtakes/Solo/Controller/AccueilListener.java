@@ -2,7 +2,7 @@ package amoussa.sixtakes.Solo.Controller;
 import java.awt.event.*;
 import javax.swing.*;
 
-import amoussa.sixtakes.Multijoueur.View.Lobby;
+import amoussa.sixtakes.Multijoueur.View.MultiMenu;
 import amoussa.sixtakes.Solo.View.*;
 /**
  * Listener gérant les boutons de la fenêtre d'accueil.
@@ -31,13 +31,7 @@ public class AccueilListener implements ActionListener {
         }
 
         if( e.getActionCommand() =="Multijoueur"){
-            String[] option = {"Créer une partie","Rejoindre une partie"};
-            //JOptionPane.showMessageDialog(fen, "Cette section n'est pas encore disponible", "à venir", 0);
-             int c = JOptionPane.showOptionDialog(fen, "Choisissez :", "Multijoueur", JOptionPane.DEFAULT_OPTION, 0, null,option, e);
-            
-             if(c== 0){
-                 new Lobby();
-             }
-        } 
+            new MultiMenu(this.fen);
+        }
     }   
 }
